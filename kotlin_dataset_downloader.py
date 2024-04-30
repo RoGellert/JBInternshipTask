@@ -1,23 +1,39 @@
 # pip install gitpython
 from git import Repo
-import os
 from collections import deque
+import shutil
+import os
 
-Repo.clone_from("https://github.com/JetBrains/kotlin", "./raw_repos/kotlin")
-Repo.clone_from("https://github.com/2dust/v2rayNG", "./raw_repos/v2rayNG")
-Repo.clone_from("https://github.com/JunkFood02/Seal", "./raw_repos/Seal")
-Repo.clone_from("https://github.com/tiann/KernelSU", "./raw_repos/KernelSU")
-Repo.clone_from("https://github.com/vfsfitvnm/ViMusic", "./raw_repos/ViMusic")
+# define raw and output folders
+raw_folder_name = "raw_repos"
+kotlin_file_folder_name = "kotlin_files"
 
-os.makedirs("kotlin_files")
-q = deque(["raw_repos"])
+# map folders to download the repos to respective GitHub links
+folder_to_link = {
+    "kotlin": "https://github.com/JetBrains/kotlin", # for some reason sometimes this library fails to download kotlin
+    "v2rayNG": "https://github.com/2dust/v2rayNG",
+    "Seal": "https://github.com/JunkFood02/Seal",
+    "KernelSU": "https://github.com/tiann/KernelSU",
+    "ViMusic": "https://github.com/vfsfitvnm/ViMusic"
+}
+
+# clone the repos to the respective folders
+for repo in folder_to_link:
+    Repo.clone_from(folder_to_link[repo], f"./{raw_folder_name}/{repo}")
+
+# move the .kt files to the test data folder (using dfs in this case)
+os.makedirs(kotlin_file_folder_name)
+q = deque([raw_folder_name])
 curr_num = 0
 while q:
     curr = q.popleft()
     for root, dirs, files in os.walk(curr, topdown=True):
         for name in files:
             if name.endswith(".kt"):
-                os.rename(os.path.join(root, name), "kotlin_files/"+str(curr_num)+name)
+                os.rename(os.path.join(root, name), f"kotlin_files/{str(curr_num)}{name}")
                 curr_num += 1
         for name in dirs:
             q.append(name)
+
+# zip kotlin files
+shutil.make_archive(kotlin_file_folder_name, 'zip', kotlin_file_folder_name)
