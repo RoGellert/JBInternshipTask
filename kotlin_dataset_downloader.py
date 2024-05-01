@@ -10,7 +10,7 @@ kotlin_file_folder_name = "kotlin_files"
 
 # map folders to download the repos to respective GitHub links
 folder_to_link = {
-    "kotlin": "https://github.com/JetBrains/kotlin", # for some reason sometimes this library fails to download kotlin
+    "kotlin": "https://github.com/JetBrains/kotlin",  # that one is big and takes a while
     "v2rayNG": "https://github.com/2dust/v2rayNG",
     "Seal": "https://github.com/JunkFood02/Seal",
     "KernelSU": "https://github.com/tiann/KernelSU",
@@ -36,4 +36,4 @@ while q:
             q.append(name)
 
 # zip kotlin files
-shutil.make_archive(kotlin_file_folder_name, 'zip', kotlin_file_folder_name)
+# shutil.make_archive(kotlin_file_folder_name, 'zip', kotlin_file_folder_name)
