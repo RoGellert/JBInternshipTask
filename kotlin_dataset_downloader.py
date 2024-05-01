@@ -11,10 +11,10 @@ kotlin_file_folder_name = "kotlin_files"
 # map folders to download the repos to respective GitHub links
 folder_to_link = {
     # "kotlin": "https://github.com/JetBrains/kotlin",  # that one is big and takes a while
-    "v2rayNG": "https://github.com/2dust/v2rayNG",
-    "Seal": "https://github.com/JunkFood02/Seal",
-    "KernelSU": "https://github.com/tiann/KernelSU",
-    "ViMusic": "https://github.com/vfsfitvnm/ViMusic"
+    # "v2rayNG": "https://github.com/2dust/v2rayNG",
+    # "Seal": "https://github.com/JunkFood02/Seal",
+    # "KernelSU": "https://github.com/tiann/KernelSU",
+    # "ViMusic": "https://github.com/vfsfitvnm/ViMusic"
 }
 
 # clone the repos to the respective folders
