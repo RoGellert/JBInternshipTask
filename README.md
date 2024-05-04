@@ -2,12 +2,13 @@
 
 Author: Roman Gellert
 
-I used Colab Pro for fine-tuning, here is the link to the notebook: 
+I used Colab Pro for fine-tuning, here is the link to the notebook:
+https://colab.research.google.com/drive/1wMJutEiXuZ2c9FkgoMKJPIOC1ZyrxcPG?usp=sharing
 
 ### Repo content: 
 - <ins>kotlin_dataset_downloader</ins>.py - python script to download several kotlin open source projects
 - <ins>kotlin_files</ins>.zip - downloaded kotlin files zipped 
-- <ins>_to_be_added_.</ins>ipynb - ipynb notebook with sequential code for dataset parsing, fine-tuning and analysis
+- <ins>ine_tuning_and_testing</ins>.ipynb - ipynb notebook with sequential code for dataset parsing, fine-tuning and output generation
 - Analysis is in this README
 
 ### Approach:
@@ -21,6 +22,30 @@ I chose not to use some form of distance between two strings to assess the perfo
 this approach it didn't produce any meaningful results for Phi 1.5.
 
 ### Analysis:
+
+I spend around 2 hours fine-tuning with mostly default parameters.
+
+Key takeaways:
+
+- Phi 1.5 is generally not aligned well with user's preferences (like for example ChatGPT). It is nevertheless impressive considering 
+a relatively small parameter count. It is very hard, however, to make practical use of the answers.
+- Before fine-tuning python questions were answered relatively well (at least they made some sense). Some Kotlin 
+prompts were answered more or less adequately although in some cases the output was in python and java instead.
+- After fine-tuning (at least the way I did it) it is hard to say if there was a big improvement or not. Some answers just 
+contained relevant text, but had nothing to do with the code. Some python responses starting to look like Kotlin. Some 
+answers remained more or less the same. Generally the answers started to produce something resembling Kotlin, but it didn't 
+make them more useful overall.
+
+What could be done to make it better? 
+
+- Quality data. Ideally a big dataset with ground truth data to fine-tune the model in a supervised QA way
+- Bigger and better model
+- Longer fine-tuning time and better hyperparameters
+
+My personal answer highlight:
+
+![img_29.png](img_29.png)
+
 
 I list here the prompts I consider interesting to analyse before and after fine-tuning:
 
