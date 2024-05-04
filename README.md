@@ -8,7 +8,7 @@ https://colab.research.google.com/drive/1wMJutEiXuZ2c9FkgoMKJPIOC1ZyrxcPG?usp=sh
 ### Repo content: 
 - <ins>kotlin_dataset_downloader</ins>.py - python script to download several kotlin open source projects
 - <ins>kotlin_files</ins>.zip - downloaded kotlin files zipped 
-- <ins>ine_tuning_and_testing</ins>.ipynb - ipynb notebook with sequential code for dataset parsing, fine-tuning and output generation
+- <ins>fine_tuning_and_testing</ins>.ipynb - ipynb notebook with sequential code for dataset parsing, fine-tuning and output generation
 - Analysis is in this README
 
 ### Approach:
