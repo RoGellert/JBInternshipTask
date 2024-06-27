@@ -23,7 +23,7 @@ this approach it didn't produce any meaningful results for Phi 1.5.
 
 ### Analysis:
 
-I spend around 2 hours fine-tuning with mostly default parameters.
+I spent around 2 hours fine-tuning with mostly default parameters.
 
 Key takeaways:
 
